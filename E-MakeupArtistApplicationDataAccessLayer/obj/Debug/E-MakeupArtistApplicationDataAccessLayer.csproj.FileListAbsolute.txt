@@ -12,3 +12,4 @@ E:\Semesters\Fall 2022-2023\Final\Advanced Programming in .NET\E-MakeupArtistApp
 E:\Semesters\Fall 2022-2023\Final\Advanced Programming in .NET\E-MakeupArtistApplication\E-MakeupArtistApplicationDataAccessLayer\obj\Debug\E-MakeupArtistApplicationDataAccessLayer.pdb
 E:\Semesters\Fall 2022-2023\Final\Advanced Programming in .NET\E-MakeupArtistApplication\E-MakeupArtistApplicationDataAccessLayer\obj\Debug\E_MakeupArtistApplicationDataAccessLayer.Migrations.AllTablesCreated.resources
 E:\Semesters\Fall 2022-2023\Final\Advanced Programming in .NET\E-MakeupArtistApplication\E-MakeupArtistApplicationDataAccessLayer\obj\Debug\E-MakeupArtistApplicationDataAccessLayer.csproj.GenerateResource.cache
+E:\Semesters\Fall 2022-2023\Final\Advanced Programming in .NET\E-MakeupArtistApplication\E-MakeupArtistApplicationDataAccessLayer\obj\Debug\E_MakeupArtistApplicationDataAccessLayer.Migrations.TokenTableCreated.resources

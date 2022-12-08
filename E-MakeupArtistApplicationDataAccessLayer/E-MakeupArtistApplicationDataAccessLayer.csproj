@@ -65,25 +65,46 @@
     <Compile Include="DB\Models\Package.cs" />
     <Compile Include="DB\Models\Payment.cs" />
     <Compile Include="DB\Models\PaymentInfo.cs" />
+    <Compile Include="DB\Models\Token.cs" />
     <Compile Include="DB\Models\User.cs" />
+    <Compile Include="Interfaces\IBasicOperations.cs" />
     <Compile Include="Migrations\202212081057459_AllTablesCreated.cs" />
     <Compile Include="Migrations\202212081057459_AllTablesCreated.designer.cs">
       <DependentUpon>202212081057459_AllTablesCreated.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212081647444_TokenTableCreated.cs" />
+    <Compile Include="Migrations\202212081647444_TokenTableCreated.designer.cs">
+      <DependentUpon>202212081647444_TokenTableCreated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Operations\AdminOperations.cs" />
+    <Compile Include="Operations\AreaOperations.cs" />
+    <Compile Include="Operations\ArtistOperations.cs" />
+    <Compile Include="Operations\ConversationOperations.cs" />
+    <Compile Include="Operations\CustomerOperations.cs" />
+    <Compile Include="Operations\FeedbackOperations.cs" />
+    <Compile Include="Operations\InboxOperations.cs" />
+    <Compile Include="Operations\Operations.cs" />
+    <Compile Include="Operations\OrderDetailOperations.cs" />
+    <Compile Include="Operations\OrderOperations.cs" />
+    <Compile Include="Operations\PackageOperations.cs" />
+    <Compile Include="Operations\PaymentInfosOperations.cs" />
+    <Compile Include="Operations\PaymentOperations.cs" />
+    <Compile Include="Operations\TokenOperations.cs" />
+    <Compile Include="Operations\UserOperations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Operations\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202212081057459_AllTablesCreated.resx">
       <DependentUpon>202212081057459_AllTablesCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212081647444_TokenTableCreated.resx">
+      <DependentUpon>202212081647444_TokenTableCreated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

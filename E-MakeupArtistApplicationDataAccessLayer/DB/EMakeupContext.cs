@@ -23,5 +23,6 @@ namespace E_MakeupArtistApplicationDataAccessLayer.DB
         public DbSet<Feedback> Feedbacks { get; set; }
         public DbSet<Payment > Payments { get; set; }
         public DbSet<PaymentInfo> PaymentInfos { get; set; }
+        public DbSet<Token> Tokens { get; set; }
     }
 }

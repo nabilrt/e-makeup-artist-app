@@ -32,6 +32,8 @@ namespace E_MakeupArtistApplicationDataAccessLayer.DB.Models
 
         public virtual List<Feedback> Feedback { get; set; }
 
+        public virtual List<Token> Token { get; set; }
+
         public User()
         {
             Admin = new List<Admin>();
@@ -39,6 +41,7 @@ namespace E_MakeupArtistApplicationDataAccessLayer.DB.Models
             Customer = new List<Customer>();
             Payment = new List<Payment>();
             Feedback = new List<Feedback>();
+            Token = new List<Token>();
 
         }
     }
