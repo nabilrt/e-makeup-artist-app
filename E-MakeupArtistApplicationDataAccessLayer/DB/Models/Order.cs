@@ -14,10 +14,10 @@ namespace E_MakeupArtistApplicationDataAccessLayer.DB.Models
         public int Id { get; set; }
 
         [ForeignKey("Customer")]
-        public int CustomerId { get; set; }
+        public int? CustomerId { get; set; }
 
         [ForeignKey("Artist")]
-        public int ArtistId { get; set; }
+        public int? ArtistId { get; set; }
 
         public double TotalPrice { get; set; }
 

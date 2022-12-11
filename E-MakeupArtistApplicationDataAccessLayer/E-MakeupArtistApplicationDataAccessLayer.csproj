@@ -68,13 +68,9 @@
     <Compile Include="DB\Models\Token.cs" />
     <Compile Include="DB\Models\User.cs" />
     <Compile Include="Interfaces\IBasicOperations.cs" />
-    <Compile Include="Migrations\202212081057459_AllTablesCreated.cs" />
-    <Compile Include="Migrations\202212081057459_AllTablesCreated.designer.cs">
-      <DependentUpon>202212081057459_AllTablesCreated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202212081647444_TokenTableCreated.cs" />
-    <Compile Include="Migrations\202212081647444_TokenTableCreated.designer.cs">
-      <DependentUpon>202212081647444_TokenTableCreated.cs</DependentUpon>
+    <Compile Include="Migrations\202212111650353_newadded.cs" />
+    <Compile Include="Migrations\202212111650353_newadded.designer.cs">
+      <DependentUpon>202212111650353_newadded.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Operations\AdminOperations.cs" />
@@ -98,13 +94,9 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202212081057459_AllTablesCreated.resx">
-      <DependentUpon>202212081057459_AllTablesCreated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202212081647444_TokenTableCreated.resx">
-      <DependentUpon>202212081647444_TokenTableCreated.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202212111650353_newadded.resx">
+      <DependentUpon>202212111650353_newadded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

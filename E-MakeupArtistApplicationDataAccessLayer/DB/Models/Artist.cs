@@ -11,6 +11,7 @@ namespace E_MakeupArtistApplicationDataAccessLayer.DB.Models
     public class Artist
     {
         [Key]
+        [ForeignKey("User")]
         public int Id { get; set; }
         public string Name { get; set; }
 
@@ -18,9 +19,6 @@ namespace E_MakeupArtistApplicationDataAccessLayer.DB.Models
 
         [ForeignKey("Area")]
         public int AreaId { get; set; }
-
-        [ForeignKey("User")]
-        public int User_Id { get; set; }
 
         public string Portfolio_Link { get; set; }
 

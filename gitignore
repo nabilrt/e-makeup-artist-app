@@ -1,0 +1,8 @@
+/.vs
+/E-MakeupArtistApplication/bin
+/E-MakeupArtistApplication/obj
+/E-MakeupArtistApplicationBussinessLogicLayer/bin
+/E-MakeupArtistApplicationBussinessLogicLayer/obj
+/E-MakeupArtistApplicationDataAccessLayer/bin
+/E-MakeupArtistApplicationDataAccessLayer/obj
+/E-MakeupArtistApplication/Web.config

@@ -1,0 +1,14 @@
+E:\Semesters\Fall 2022-2023\Final\Advanced Programming in .NET\E-MakeupArtistApplication\E-MakeupArtistApplicationBussinessLogicLayer\bin\Debug\E-MakeupArtistApplicationBussinessLogicLayer.dll
+E:\Semesters\Fall 2022-2023\Final\Advanced Programming in .NET\E-MakeupArtistApplication\E-MakeupArtistApplicationBussinessLogicLayer\bin\Debug\E-MakeupArtistApplicationBussinessLogicLayer.pdb
+E:\Semesters\Fall 2022-2023\Final\Advanced Programming in .NET\E-MakeupArtistApplication\E-MakeupArtistApplicationBussinessLogicLayer\bin\Debug\AutoMapper.dll
+E:\Semesters\Fall 2022-2023\Final\Advanced Programming in .NET\E-MakeupArtistApplication\E-MakeupArtistApplicationBussinessLogicLayer\bin\Debug\E-MakeupArtistApplicationDataAccessLayer.dll
+E:\Semesters\Fall 2022-2023\Final\Advanced Programming in .NET\E-MakeupArtistApplication\E-MakeupArtistApplicationBussinessLogicLayer\bin\Debug\EntityFramework.dll
+E:\Semesters\Fall 2022-2023\Final\Advanced Programming in .NET\E-MakeupArtistApplication\E-MakeupArtistApplicationBussinessLogicLayer\bin\Debug\E-MakeupArtistApplicationDataAccessLayer.pdb
+E:\Semesters\Fall 2022-2023\Final\Advanced Programming in .NET\E-MakeupArtistApplication\E-MakeupArtistApplicationBussinessLogicLayer\bin\Debug\E-MakeupArtistApplicationDataAccessLayer.dll.config
+E:\Semesters\Fall 2022-2023\Final\Advanced Programming in .NET\E-MakeupArtistApplication\E-MakeupArtistApplicationBussinessLogicLayer\bin\Debug\AutoMapper.xml
+E:\Semesters\Fall 2022-2023\Final\Advanced Programming in .NET\E-MakeupArtistApplication\E-MakeupArtistApplicationBussinessLogicLayer\bin\Debug\EntityFramework.xml
+E:\Semesters\Fall 2022-2023\Final\Advanced Programming in .NET\E-MakeupArtistApplication\E-MakeupArtistApplicationBussinessLogicLayer\obj\Debug\E-MakeupArtistApplicationBussinessLogicLayer.csproj.AssemblyReference.cache
+E:\Semesters\Fall 2022-2023\Final\Advanced Programming in .NET\E-MakeupArtistApplication\E-MakeupArtistApplicationBussinessLogicLayer\obj\Debug\E-MakeupArtistApplicationBussinessLogicLayer.csproj.CoreCompileInputs.cache
+E:\Semesters\Fall 2022-2023\Final\Advanced Programming in .NET\E-MakeupArtistApplication\E-MakeupArtistApplicationBussinessLogicLayer\obj\Debug\E-MakeupArtistApplicationBussinessLogicLayer.csproj.CopyComplete
+E:\Semesters\Fall 2022-2023\Final\Advanced Programming in .NET\E-MakeupArtistApplication\E-MakeupArtistApplicationBussinessLogicLayer\obj\Debug\E-MakeupArtistApplicationBussinessLogicLayer.dll
+E:\Semesters\Fall 2022-2023\Final\Advanced Programming in .NET\E-MakeupArtistApplication\E-MakeupArtistApplicationBussinessLogicLayer\obj\Debug\E-MakeupArtistApplicationBussinessLogicLayer.pdb

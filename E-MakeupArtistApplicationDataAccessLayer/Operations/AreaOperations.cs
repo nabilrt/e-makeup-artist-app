@@ -12,27 +12,39 @@ namespace E_MakeupArtistApplicationDataAccessLayer.Operations
     {
         public Area Add(Area cls)
         {
-            throw new NotImplementedException();
+            var area=db.Areas.Add(cls);
+
+            db.SaveChanges();
+
+            return area;
         }
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            db.Areas.Remove(get(id));
+
+            return db.SaveChanges() > 0;
         }
 
         public Area get(int id)
         {
-            throw new NotImplementedException();
+           return db.Areas.Find(id);
         }
 
         public List<Area> getALL()
         {
-            throw new NotImplementedException();
+            return db.Areas.ToList();
         }
 
         public Area Update(Area cls)
         {
-            throw new NotImplementedException();
+            var area = get(cls.Id);
+
+            area.Name=cls.Name;
+
+            db.SaveChanges();
+
+            return area;
         }
     }
 }

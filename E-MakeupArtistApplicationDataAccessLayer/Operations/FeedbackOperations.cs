@@ -12,27 +12,39 @@ namespace E_MakeupArtistApplicationDataAccessLayer.Operations
     {
         public Feedback Add(Feedback cls)
         {
-            throw new NotImplementedException();
+            var feedback=db.Feedbacks.Add(cls);
+
+            db.SaveChanges();
+
+            return feedback;
         }
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            db.Feedbacks.Remove(get(id));
+
+            return db.SaveChanges() > 0;
         }
 
         public Feedback get(int id)
         {
-            throw new NotImplementedException();
+            return db.Feedbacks.Find(id);
         }
 
         public List<Feedback> getALL()
         {
-            throw new NotImplementedException();
+            return db.Feedbacks.ToList();
         }
 
         public Feedback Update(Feedback cls)
         {
-            throw new NotImplementedException();
+            var feedback = get(cls.Id);
+
+            feedback.Description = cls.Description;
+
+            db.SaveChanges();
+
+            return feedback;
         }
     }
 }

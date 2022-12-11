@@ -20,7 +20,7 @@ namespace E_MakeupArtistApplicationDataAccessLayer.DB.Models
         public double Price { get; set; }
 
         [ForeignKey("Artist")]
-        public int Offered_By { get; set; }
+        public int? Offered_By { get; set; }
 
         public virtual Artist Artist { get; set; }
 

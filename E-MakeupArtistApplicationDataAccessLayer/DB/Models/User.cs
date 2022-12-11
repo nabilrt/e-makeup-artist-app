@@ -22,11 +22,11 @@ namespace E_MakeupArtistApplicationDataAccessLayer.DB.Models
 
         public int Is_Approved { get; set; }
 
-        public virtual List<Admin> Admin { get; set; }
+        public virtual Admin Admin { get; set; }
 
-        public virtual List<Artist> Artist { get; set; }
+        public virtual Artist Artist { get; set; }
 
-        public virtual List<Customer> Customer { get; set; }
+        public virtual Customer Customer { get; set; }
 
         public virtual List<Payment> Payment { get; set; }
 
@@ -36,9 +36,7 @@ namespace E_MakeupArtistApplicationDataAccessLayer.DB.Models
 
         public User()
         {
-            Admin = new List<Admin>();
-            Artist = new List<Artist>();
-            Customer = new List<Customer>();
+           
             Payment = new List<Payment>();
             Feedback = new List<Feedback>();
             Token = new List<Token>();
