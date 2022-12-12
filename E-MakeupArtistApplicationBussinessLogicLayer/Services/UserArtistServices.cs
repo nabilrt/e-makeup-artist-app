@@ -105,6 +105,7 @@ namespace E_MakeupArtistApplicationBussinessLogicLayer.Services
         {
             var User = UserServices.updateUser(new UserDTO
             {
+                Id= userArtistDTO.Id,
                 Username = userArtistDTO.Username,
                 Password = userArtistDTO.Password,
                 Email = userArtistDTO.Email,

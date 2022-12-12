@@ -10,54 +10,53 @@ using System.Web.Http.Cors;
 
 namespace E_MakeupArtistApplication.Controllers
 {
-    [EnableCors("*","*","*")]
-    public class ArtistController : ApiController
+    [EnableCors("*", "*", "*")]
+    public class FeedbackController : ApiController
     {
-        [Route("api/artists")]
+        [Route("api/feedbacks")]
         [HttpGet]
-        public HttpResponseMessage getAllArtists()
+        public HttpResponseMessage getAllFeedbacks()
         {
-            var data = UserArtistServices.getALL();
+            var data = FeedbackServices.getALL();
 
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
 
-        [Route("api/artist/add")]
+        [Route("api/feedback/add")]
         [HttpPost]
 
-        public HttpResponseMessage addUser(UserArtistDTO userArtistDTO)
+        public HttpResponseMessage addFeedback(FeedbackDTO feedbackDTO)
         {
-            var data = UserArtistServices.Add(userArtistDTO);
+            var data = FeedbackServices.addFeedback(feedbackDTO);
 
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
 
-        [Route("api/artist/{id}")]
+        [Route("api/feedback/{id}")]
         [HttpGet]
 
-        public HttpResponseMessage getUser(int id)
+        public HttpResponseMessage getfeedback(int id)
         {
-            var data = UserArtistServices.Get(id);
+            var data = FeedbackServices.get(id);
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
 
-        [Route("api/artist/update")]
+        [Route("api/feedback/update")]
         [HttpPost]
-        public HttpResponseMessage updateUser(UserArtistDTO userArtistDTO)
+        public HttpResponseMessage updateFeedback(FeedbackDTO feedbackDTO)
         {
-            var data = UserArtistServices.Update(userArtistDTO);
+            var data = FeedbackServices.updateFeedback(feedbackDTO);
 
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
 
-        [Route("api/artist/delete/{id}")]
+        [Route("api/feedback/delete/{id}")]
         [HttpGet]
-        public HttpResponseMessage deleteUser(int id)
+        public HttpResponseMessage deleteFeedback(int id)
         {
-            var data = UserArtistServices.delete(id);
+            var data = FeedbackServices.deleteFeedback(id);
 
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
-
     }
 }
