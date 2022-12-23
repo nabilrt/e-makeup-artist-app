@@ -51,7 +51,9 @@
     <Compile Include="DTOs\FeedbackDTO.cs" />
     <Compile Include="DTOs\LoginDTO.cs" />
     <Compile Include="DTOs\TokenDTO.cs" />
+    <Compile Include="DTOs\UserAdminDTO.cs" />
     <Compile Include="DTOs\UserArtistDTO.cs" />
+    <Compile Include="DTOs\UserCustomerDTO.cs" />
     <Compile Include="DTOs\UserDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ArtistServices.cs" />
