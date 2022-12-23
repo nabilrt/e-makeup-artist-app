@@ -25,7 +25,7 @@ namespace E_MakeupArtistApplicationDataAccessLayer.Operations
         public User Authenticate(string username, string password)
         {
           //  var user = db.Users.FirstOrDefault(x => x.Username.Equals(username) && x.Password.Equals(password));
-            return db.Users.FirstOrDefault(x => x.Username.Equals(username) && x.Password.Equals(password) && x.Is_Approved.Equals("Yes"));
+            return db.Users.FirstOrDefault(x => x.Username.Equals(username) && x.Password.Equals(password) && x.Is_Approved==1);
         }
 
         public bool Delete(int id)
