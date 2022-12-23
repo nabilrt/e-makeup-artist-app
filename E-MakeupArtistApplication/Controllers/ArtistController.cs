@@ -61,5 +61,35 @@ namespace E_MakeupArtistApplication.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
 
+        [Route("api/artist/message/send")]
+        [HttpPost]
+        [ArtistAuth]
+        public HttpResponseMessage sendMessage(ConversationDTO conversationDTO)
+        {
+            var data=ConversationServices.SendMessage(conversationDTO);
+
+            return Request.CreateResponse(HttpStatusCode.OK,data);
+        }
+
+        [Route("api/artist/conversation/{id}")]
+        [HttpGet]
+        [ArtistAuth]
+        public HttpResponseMessage getConversation(int id)
+        {
+            var data=ConversationServices.GetConversation(id);
+
+            return Request.CreateResponse(HttpStatusCode.OK, data);
+        }
+
+        [Route("api/artist/message/reply")]
+        [HttpPost]
+        [ArtistAuth]
+        public HttpResponseMessage replyMessage(ConversationDTO conversationDTO)
+        {
+            var data=ConversationServices.ReplyMessage(conversationDTO);
+
+            return Request.CreateResponse(HttpStatusCode.OK, data);
+        }
+
     }
 }

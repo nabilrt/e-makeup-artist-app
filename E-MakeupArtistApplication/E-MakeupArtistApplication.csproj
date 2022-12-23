@@ -103,7 +103,9 @@
     <Compile Include="Auth\CustomerAuth.cs" />
     <Compile Include="Controllers\ArtistController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\ConversationController.cs" />
     <Compile Include="Controllers\FeedbackController.cs" />
+    <Compile Include="Controllers\InboxController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

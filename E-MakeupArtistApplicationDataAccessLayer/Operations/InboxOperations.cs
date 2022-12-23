@@ -8,26 +8,56 @@ using System.Threading.Tasks;
 
 namespace E_MakeupArtistApplicationDataAccessLayer.Operations
 {
-    public class InboxOperations : Operations, IBasicOperations<Inbox, int, bool>
+    public class InboxOperations : Operations, IBasicOperations<Inbox, int, bool>,IPersonalMessages<Inbox>
     {
         public Inbox Add(Inbox cls)
         {
-            throw new NotImplementedException();
+            db.Inboxes.Add(cls);
+
+            if (db.SaveChanges() > 0)
+            {
+                return cls;
+            }
+
+            return null;
         }
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            var inbox=(from inb in db.Inboxes where inb.Id==id select inb).FirstOrDefault();
+
+            db.Inboxes.Remove(inbox);
+
+            if (db.SaveChanges() > 0)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public Inbox get(int id)
         {
-            throw new NotImplementedException();
+            return db.Inboxes.Find(id);
         }
 
         public List<Inbox> getALL()
         {
-            throw new NotImplementedException();
+            return db.Inboxes.ToList();
+        }
+
+        public List<Inbox> getArtistOnlyInbox(int id)
+        {
+            var inboxes=(from inb in db.Inboxes where inb.ArtistId==id select inb).ToList();
+
+            return inboxes;
+        }
+
+        public List<Inbox> getCustomerOnlyInbox(int id)
+        {
+            var inboxes = (from inb in db.Inboxes where inb.CustomerId == id select inb).ToList();
+
+            return inboxes;
         }
 
         public Inbox Update(Inbox cls)

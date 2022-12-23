@@ -8,31 +8,84 @@ using System.Threading.Tasks;
 
 namespace E_MakeupArtistApplicationDataAccessLayer.Operations
 {
-    internal class ConversationOperations : Operations, IBasicOperations<Conversation, int, bool>
+    internal class ConversationOperations : Operations, IBasicOperations<Conversation, int, bool>,IConversations<Conversation>
     {
         public Conversation Add(Conversation cls)
         {
-            throw new NotImplementedException();
+            db.Conversations.Add(cls);
+
+            if (db.SaveChanges() > 0)
+            {
+                return cls;
+            }
+
+            return null;
         }
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            var message=db.Conversations.Find(id);
+
+            db.Conversations.Remove(message);
+
+            if (db.SaveChanges() > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool deleteInboxConvos(int id)
+        {
+            var inboxes=(from inb in db.Conversations where inb.InboxId==id select inb).ToList();
+
+            foreach(var inbox in inboxes)
+            {
+                db.Conversations.Remove(inbox);
+            }
+
+            var rs=db.SaveChanges();
+
+            if (rs > 0)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public Conversation get(int id)
         {
-            throw new NotImplementedException();
+            return db.Conversations.Find(id);
         }
 
         public List<Conversation> getALL()
         {
-            throw new NotImplementedException();
+            return db.Conversations.ToList();
+        }
+
+        public List<Conversation> getAllConversations(int id)
+        {
+            return (from conv in db.Conversations where conv.InboxId== id select conv).ToList();
         }
 
         public Conversation Update(Conversation cls)
         {
-            throw new NotImplementedException();
+            var conversation = get(cls.Id);
+
+            if (conversation != null)
+            {
+                conversation.InboxId = cls.InboxId;
+                conversation.Message = cls.Message;
+                conversation.Reply = cls.Reply; 
+                db.SaveChanges();
+
+                return conversation;
+            }
+
+            return null;
+
         }
     }
 }

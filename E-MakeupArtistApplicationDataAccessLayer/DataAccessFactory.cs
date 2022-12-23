@@ -86,6 +86,16 @@ namespace E_MakeupArtistApplicationDataAccessLayer
             return new UserOperations();
         }
 
+        public static IPersonalMessages<Inbox> GetMessages()
+        {
+            return new InboxOperations();
+        }
+
+        public static IConversations<Conversation> GetInboxSpecificConvos()
+        {
+            return new ConversationOperations();
+        }
+
       
     }
 }
