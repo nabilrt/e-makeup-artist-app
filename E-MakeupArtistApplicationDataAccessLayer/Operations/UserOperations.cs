@@ -14,7 +14,7 @@ namespace E_MakeupArtistApplicationDataAccessLayer.Operations
         {
             db.Users.Add(cls);
 
-            if (db.SaveChanges() > 0)
+            if (db.SaveChanges() > 0) //for saving in database 
             {
                 return cls;
             }
