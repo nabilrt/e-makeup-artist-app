@@ -81,6 +81,11 @@ namespace E_MakeupArtistApplicationDataAccessLayer
             return new AdminOperations();
         }
 
+        public static IAuth<User> LoginDataAccess()
+        {
+            return new UserOperations();
+        }
+
       
     }
 }

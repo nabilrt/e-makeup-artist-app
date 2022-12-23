@@ -67,6 +67,7 @@
     <Compile Include="DB\Models\PaymentInfo.cs" />
     <Compile Include="DB\Models\Token.cs" />
     <Compile Include="DB\Models\User.cs" />
+    <Compile Include="Interfaces\IAuth.cs" />
     <Compile Include="Interfaces\IBasicOperations.cs" />
     <Compile Include="Migrations\202212111650353_newadded.cs" />
     <Compile Include="Migrations\202212111650353_newadded.designer.cs">

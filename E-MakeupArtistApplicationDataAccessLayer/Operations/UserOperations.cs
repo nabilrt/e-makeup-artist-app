@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace E_MakeupArtistApplicationDataAccessLayer.Operations
 {
-    internal class UserOperations : Operations, IBasicOperations<User, int, bool>
+    internal class UserOperations : Operations, IBasicOperations<User, int, bool>,IAuth<User>
     {
         public User Add(User cls)
         {
@@ -20,6 +20,12 @@ namespace E_MakeupArtistApplicationDataAccessLayer.Operations
             }
 
             return null;
+        }
+
+        public User Authenticate(string username, string password)
+        {
+          //  var user = db.Users.FirstOrDefault(x => x.Username.Equals(username) && x.Password.Equals(password));
+            return db.Users.FirstOrDefault(x => x.Username.Equals(username) && x.Password.Equals(password));
         }
 
         public bool Delete(int id)

@@ -1,4 +1,5 @@
-﻿using E_MakeupArtistApplicationBussinessLogicLayer.DTOs;
+﻿using E_MakeupArtistApplication.Auth;
+using E_MakeupArtistApplicationBussinessLogicLayer.DTOs;
 using E_MakeupArtistApplicationBussinessLogicLayer.Services;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace E_MakeupArtistApplication.Controllers
     {
         [Route("api/artists")]
         [HttpGet]
+        [ArtistAuth]
         public HttpResponseMessage getAllArtists()
         {
             var data = UserArtistServices.getALL();

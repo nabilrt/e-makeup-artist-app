@@ -12,22 +12,43 @@ namespace E_MakeupArtistApplicationDataAccessLayer.Operations
     {
         public Token Add(Token cls)
         {
-            throw new NotImplementedException();
+            var token=db.Tokens.Add(cls);
+
+            if (db.SaveChanges() > 0)
+            {
+                return token;
+            }
+
+            return null;
+           
         }
 
         public bool Delete(string id)
         {
-            throw new NotImplementedException();
+            var token=(from tk in db.Tokens where tk.TokenDetails==id select tk).FirstOrDefault();
+
+
+            db.Tokens.Remove(token);
+
+            if (db.SaveChanges() > 0)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public Token get(string id)
         {
-            throw new NotImplementedException();
+            var token = (from tk in db.Tokens where tk.TokenDetails == id select tk).FirstOrDefault();
+
+            return token;
+
         }
 
         public List<Token> getALL()
         {
-            throw new NotImplementedException();
+            return db.Tokens.ToList();
         }
 
         public Token Update(Token cls)
