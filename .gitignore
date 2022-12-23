@@ -6,3 +6,6 @@
 /E-MakeupArtistApplicationDataAccessLayer/bin
 /E-MakeupArtistApplicationDataAccessLayer/obj
 /E-MakeupArtistApplication/Web.config
+/E-MakeupArtistApplication/Web.Release.config
+/E-MakeupArtistApplication/Web.Debug.config
+/E-MakeupArtistApplication/Web.config
