@@ -96,6 +96,11 @@ namespace E_MakeupArtistApplicationDataAccessLayer
             return new ConversationOperations();
         }
 
+        public static IPremiumMember<Customer> GetPremiumMember()
+        {
+            return new CustomerOperations();
+        }
+
       
     }
 }

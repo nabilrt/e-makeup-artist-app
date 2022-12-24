@@ -22,20 +22,14 @@ namespace E_MakeupArtistApplicationBussinessLogicLayer.DTOs
 
         public int Is_Approved { get; set; }
 
-
         public string Name { get; set; }
 
         public DateTime DOB { get; set; }
 
-       
         public int AreaId { get; set; }
 
         public string Address { get; set; }
 
         public int Is_Premium { get; set; }
-
-     
-
-    
     }
 }
