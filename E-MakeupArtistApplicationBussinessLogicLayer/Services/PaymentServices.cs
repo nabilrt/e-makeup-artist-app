@@ -56,5 +56,21 @@ namespace E_MakeupArtistApplicationBussinessLogicLayer.Services
 
             return mapper.Map<PaymentDTO>(ret);
         }
+      
+
+        public static bool deletePayment(int id)
+        {
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<PaymentDTO, Payment>());
+            var mapper = new Mapper(config);
+
+            if (DataAccessFactory.PaymentDataAccess().Delete(id))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+
     }
 }
