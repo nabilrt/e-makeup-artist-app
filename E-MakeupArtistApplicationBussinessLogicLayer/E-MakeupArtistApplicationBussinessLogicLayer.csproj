@@ -54,6 +54,7 @@
     <Compile Include="DTOs\FeedbackDTO.cs" />
     <Compile Include="DTOs\InboxDTO.cs" />
     <Compile Include="DTOs\LoginDTO.cs" />
+    <Compile Include="DTOs\OrderDetailDTO.cs" />
     <Compile Include="DTOs\OrderDTO.cs" />
     <Compile Include="DTOs\PackageDTO.cs" />
     <Compile Include="DTOs\PaymentDTO.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Services\FeedbackServices.cs" />
     <Compile Include="Services\InboxServices.cs" />
     <Compile Include="Services\LoginServices.cs" />
+    <Compile Include="Services\OrderDetailServices.cs" />
     <Compile Include="Services\OrderServices.cs" />
     <Compile Include="Services\PackageServices.cs" />
     <Compile Include="Services\PaymentInfoServices.cs" />
