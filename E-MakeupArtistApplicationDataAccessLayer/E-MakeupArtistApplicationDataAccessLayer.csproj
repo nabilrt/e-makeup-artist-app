@@ -70,6 +70,7 @@
     <Compile Include="Interfaces\IAuth.cs" />
     <Compile Include="Interfaces\IBasicOperations.cs" />
     <Compile Include="Interfaces\IConversations.cs" />
+    <Compile Include="Interfaces\IPackageByArtist.cs" />
     <Compile Include="Interfaces\IPersonalMessages.cs" />
     <Compile Include="Interfaces\IPremiumMember.cs" />
     <Compile Include="Migrations\202212111650353_newadded.cs" />

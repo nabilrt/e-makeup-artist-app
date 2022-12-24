@@ -22,17 +22,29 @@ namespace E_MakeupArtistApplicationDataAccessLayer.Operations
 
         public PaymentInfo get(int id)
         {
-            throw new NotImplementedException();
+            return db.PaymentInfos.Find(id);
         }
 
         public List<PaymentInfo> getALL()
         {
-            throw new NotImplementedException();
+            return db.PaymentInfos.ToList();
         }
 
         public PaymentInfo Update(PaymentInfo cls)
         {
-            throw new NotImplementedException();
+            var paymentInfo = get(cls.Id);
+
+            if (paymentInfo != null)
+            {
+                paymentInfo.Price = cls.Price;
+                paymentInfo.Discount = cls.Discount;
+
+                db.SaveChanges();
+
+                return paymentInfo;
+            }
+
+            return null;
         }
     }
 }

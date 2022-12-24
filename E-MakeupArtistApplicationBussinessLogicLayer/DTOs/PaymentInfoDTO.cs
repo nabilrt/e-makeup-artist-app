@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace E_MakeupArtistApplicationBussinessLogicLayer.DTOs
 {
-    public class PackageDTO
+    public class PaymentInfoDTO
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-
-        public string Description { get; set; }
 
         public double Price { get; set; }
 
-        public int? Offered_By { get; set; }
+        public int Discount { get; set; }
     }
 }

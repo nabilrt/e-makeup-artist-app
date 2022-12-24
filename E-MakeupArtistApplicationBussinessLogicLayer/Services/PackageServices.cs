@@ -71,6 +71,21 @@ namespace E_MakeupArtistApplicationBussinessLogicLayer.Services
             return false;
         }
 
+        public static List<PackageDTO> GetPackagesByArtist(int id)
+        {
+            var data = DataAccessFactory.GetPackageByArtist().GetPackageByArtist(id);
+
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Package, PackageDTO>();
+            });
+
+            var mapper = new Mapper(config);
+            var packages = mapper.Map<List<PackageDTO>>(data);
+
+            return packages;
+        }
+
         public static bool deletePackage(int id)
         {
             var config = new MapperConfiguration(cfg => cfg.CreateMap<PackageDTO, Package>());

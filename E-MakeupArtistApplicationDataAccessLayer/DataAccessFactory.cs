@@ -101,6 +101,11 @@ namespace E_MakeupArtistApplicationDataAccessLayer
             return new CustomerOperations();
         }
 
+        public static IPackageByArtist<Package> GetPackageByArtist()
+        {
+            return new PackageOperations();
+        }
+
       
     }
 }

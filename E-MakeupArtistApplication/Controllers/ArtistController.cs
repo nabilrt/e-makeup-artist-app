@@ -16,7 +16,7 @@ namespace E_MakeupArtistApplication.Controllers
     {
         [Route("api/artists")]
         [HttpGet]
-        [ArtistAuth]
+        [AdminAuth]
         public HttpResponseMessage getAllArtists()
         {
             var data = UserArtistServices.getALL();

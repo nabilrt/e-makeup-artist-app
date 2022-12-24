@@ -55,6 +55,7 @@
     <Compile Include="DTOs\InboxDTO.cs" />
     <Compile Include="DTOs\LoginDTO.cs" />
     <Compile Include="DTOs\PackageDTO.cs" />
+    <Compile Include="DTOs\PaymentInfoDTO.cs" />
     <Compile Include="DTOs\TokenDTO.cs" />
     <Compile Include="DTOs\UserAdminDTO.cs" />
     <Compile Include="DTOs\UserArtistDTO.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Services\InboxServices.cs" />
     <Compile Include="Services\LoginServices.cs" />
     <Compile Include="Services\PackageServices.cs" />
+    <Compile Include="Services\PaymentInfoServices.cs" />
     <Compile Include="Services\UserAdminService.cs" />
     <Compile Include="Services\UserArtistServices.cs" />
     <Compile Include="Services\UserCustomerServices.cs" />

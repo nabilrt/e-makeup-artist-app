@@ -17,6 +17,7 @@ namespace E_MakeupArtistApplication.Controllers
     {
         [Route("api/customers")]
         [HttpGet]
+        [AdminAuth]
 
         public HttpResponseMessage getAllCustomers()
         {

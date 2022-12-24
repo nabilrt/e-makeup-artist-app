@@ -8,31 +8,63 @@ using System.Threading.Tasks;
 
 namespace E_MakeupArtistApplicationDataAccessLayer.Operations
 {
-    internal class PackageOperations : Operations, IBasicOperations<Package, int, bool>
+    internal class PackageOperations : Operations, IBasicOperations<Package, int, bool>,IPackageByArtist<Package>
     {
         public Package Add(Package cls)
         {
-            throw new NotImplementedException();
+            db.Packages.Add(cls);
+
+            if (db.SaveChanges() > 0)
+            {
+                return cls;
+            }
+
+            return null;
         }
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            var package=get(id);
+            db.Packages.Remove(package);
+            if (db.SaveChanges() > 0)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public Package get(int id)
         {
-            throw new NotImplementedException();
+            return db.Packages.Find(id);
         }
 
         public List<Package> getALL()
         {
-            throw new NotImplementedException();
+            return db.Packages.ToList();
+        }
+
+        public List<Package> GetPackageByArtist(int id)
+        {
+            return (from pkg in db.Packages where pkg.Offered_By==id select pkg).ToList();
         }
 
         public Package Update(Package cls)
         {
-            throw new NotImplementedException();
+            var package = get(cls.Id);
+            if(package != null)
+            {
+                package.Name = cls.Name;
+                package.Offered_By = cls.Offered_By;
+                package.Price = cls.Price;
+                package.Description= cls.Description;
+
+                db.SaveChanges();
+
+                return package;
+            }
+
+            return null;
         }
     }
 }

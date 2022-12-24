@@ -12,17 +12,33 @@ namespace E_MakeupArtistApplicationDataAccessLayer.Operations
     {
         public Admin Add(Admin cls)
         {
-            throw new NotImplementedException();
+            db.Admins.Add(cls);
+
+            if (db.SaveChanges() > 0)
+            {
+                return cls;
+            }
+
+            return null;
         }
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            var admin= db.Admins.Find(id);
+
+            db.Admins.Remove(admin);
+
+            if (db.SaveChanges() > 0)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public Admin get(int id)
         {
-            throw new NotImplementedException();
+            return db.Admins.Find(id);
         }
 
         public List<Admin> getALL()
@@ -32,7 +48,18 @@ namespace E_MakeupArtistApplicationDataAccessLayer.Operations
 
         public Admin Update(Admin cls)
         {
-            throw new NotImplementedException();
+            var admin = get(cls.Id);
+            if (admin != null)
+            {
+                admin.Name = cls.Name;
+                admin.DOB = cls.DOB;
+
+                db.SaveChanges();
+
+                return admin;
+            }
+
+            return null;
         }
     }
 }
