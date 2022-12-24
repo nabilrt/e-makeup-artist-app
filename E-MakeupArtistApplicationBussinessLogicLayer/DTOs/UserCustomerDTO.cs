@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace E_MakeupArtistApplicationBussinessLogicLayer.DTOs
 {
-    internal class UserCustomerDTO
+    public class UserCustomerDTO
     {
         public int Id { get; set; }
 
