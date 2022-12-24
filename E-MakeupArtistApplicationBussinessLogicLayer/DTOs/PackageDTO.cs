@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace E_MakeupArtistApplicationBussinessLogicLayer.DTOs
 {
-    public class PakageDTO
+    public class PackageDTO
     {
+        public string Name { get; set; }
 
+        public string Description { get; set; }
+
+        public double Price { get; set; }
     }
 }
