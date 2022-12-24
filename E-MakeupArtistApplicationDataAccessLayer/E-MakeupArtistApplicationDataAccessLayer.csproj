@@ -71,6 +71,7 @@
     <Compile Include="Interfaces\IBasicOperations.cs" />
     <Compile Include="Interfaces\IConversations.cs" />
     <Compile Include="Interfaces\IPersonalMessages.cs" />
+    <Compile Include="Interfaces\IPremiumMember.cs" />
     <Compile Include="Migrations\202212111650353_newadded.cs" />
     <Compile Include="Migrations\202212111650353_newadded.designer.cs">
       <DependentUpon>202212111650353_newadded.cs</DependentUpon>

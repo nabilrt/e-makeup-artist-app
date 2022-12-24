@@ -8,31 +8,72 @@ using System.Threading.Tasks;
 
 namespace E_MakeupArtistApplicationDataAccessLayer.Operations
 {
-    internal class CustomerOperations : Operations, IBasicOperations<Customer, int, bool>
+    internal class CustomerOperations : Operations, IBasicOperations<Customer, int, bool>,IPremiumMember<Customer>
     {
         public Customer Add(Customer cls)
         {
-            throw new NotImplementedException();
+            db.Customers.Add(cls);
+
+            if (db.SaveChanges() > 0)
+            {
+                return cls;
+            }
+
+            return null;
         }
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            var customer=get(id);
+
+            db.Customers.Remove(customer);
+
+            if (db.SaveChanges() > 0)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public Customer get(int id)
         {
-            throw new NotImplementedException();
+            return db.Customers.Find(id);
         }
 
         public List<Customer> getALL()
         {
-            throw new NotImplementedException();
+            return db.Customers.ToList();
+        }
+
+        public bool IsPremiumMember(Customer member)
+        {
+            var customer =(from cu in db.Customers where cu.Id== member.Id select cu).SingleOrDefault();
+
+            if (customer.Is_Premium == 1)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public Customer Update(Customer cls)
         {
-            throw new NotImplementedException();
+            var customer = get(cls.Id);
+            if(customer!= null)
+            {
+                customer.DOB= cls.DOB;
+                customer.Name= cls.Name;
+                customer.AreaId= cls.AreaId;
+                customer.Address= cls.Address;
+                customer.Is_Premium= cls.Is_Premium;
+                db.SaveChanges();
+
+                return customer;
+            }
+
+            return null;
         }
     }
 }
