@@ -38,7 +38,20 @@ namespace E_MakeupArtistApplicationBussinessLogicLayer.Services
             return orderd;
         }
 
-        public static OrderDetailDTO addUser(OrderDetailDTO art)
+        public static OrderDetailDTO GetOrdersById(int id)
+        {
+            var data = DataAccessFactory.GetOrderById().GetDetailsByOrder(id);
+
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<OrderDetail, OrderDetailDTO>();
+            });
+            var mapper = new Mapper(config);
+            var orderd = mapper.Map<OrderDetailDTO>(data);
+            return orderd;
+        }
+
+        public static OrderDetailDTO addOrderDetails(OrderDetailDTO art)
         {
             var config = new MapperConfiguration(cfg =>
             {
@@ -48,7 +61,7 @@ namespace E_MakeupArtistApplicationBussinessLogicLayer.Services
 
             var mapper = new Mapper(config);
             var dborder = mapper.Map<OrderDetail>(art);
-            var dbord = DataAccessFactory.OrderDetailDataAccess().Add(dbord);
+            var dbord = DataAccessFactory.OrderDetailDataAccess().Add(dborder);
 
             if (dborder != null)
             {
@@ -58,7 +71,7 @@ namespace E_MakeupArtistApplicationBussinessLogicLayer.Services
             return null;
         }
 
-        public static OrderDetailDTO updateUser(OrderDetailDTO art)
+        public static OrderDetailDTO updateOrderDetails(OrderDetailDTO art)
         {
             var config = new MapperConfiguration(c => {
                 c.CreateMap<OrderDetailDTO, OrderDetail>();

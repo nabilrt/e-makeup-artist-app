@@ -27,6 +27,36 @@ namespace E_MakeupArtistApplicationBussinessLogicLayer.Services
             return order;
         }
 
+        public static List<OrderDTO> GetOrderByArtist(int id)
+        {
+            var data = DataAccessFactory.GetOrderByUser().GetOrderByArtist(id);
+
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Order, OrderDTO>();
+            });
+
+            var mapper = new Mapper(config);
+            var orders = mapper.Map<List<OrderDTO>>(data);
+
+            return orders;
+        }
+
+        public static List<OrderDTO> GetOrderByCustomer(int id)
+        {
+            var data = DataAccessFactory.GetOrderByUser().GetOrderByCustomer(id);
+
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Order, OrderDTO>();
+            });
+
+            var mapper = new Mapper(config);
+            var orders = mapper.Map<List<OrderDTO>>(data);
+
+            return orders;
+        }
+
         public static OrderDTO GetOrder(int id)
         {
             var data = DataAccessFactory.OrderDataAccess().get(id);

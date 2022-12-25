@@ -106,6 +106,16 @@ namespace E_MakeupArtistApplicationDataAccessLayer
             return new PackageOperations();
         }
 
+        public static IOrderByUser<Order> GetOrderByUser()
+        {
+            return new OrderOperations();
+        }
+
+        public static IDetailsByOrder<OrderDetail> GetOrderById()
+        {
+            return new OrderDetailOperations();
+        }
+
       
     }
 }

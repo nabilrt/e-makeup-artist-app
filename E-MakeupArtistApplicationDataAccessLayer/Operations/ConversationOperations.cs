@@ -12,11 +12,11 @@ namespace E_MakeupArtistApplicationDataAccessLayer.Operations
     {
         public Conversation Add(Conversation cls)
         {
-            db.Conversations.Add(cls);
+            var conv=db.Conversations.Add(cls);
 
             if (db.SaveChanges() > 0)
             {
-                return cls;
+                return conv;
             }
 
             return null;

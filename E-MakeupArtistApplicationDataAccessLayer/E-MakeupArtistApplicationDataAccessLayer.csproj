@@ -70,6 +70,8 @@
     <Compile Include="Interfaces\IAuth.cs" />
     <Compile Include="Interfaces\IBasicOperations.cs" />
     <Compile Include="Interfaces\IConversations.cs" />
+    <Compile Include="Interfaces\IDetailsByOrder.cs" />
+    <Compile Include="Interfaces\IOrderByUser.cs" />
     <Compile Include="Interfaces\IPackageByArtist.cs" />
     <Compile Include="Interfaces\IPersonalMessages.cs" />
     <Compile Include="Interfaces\IPremiumMember.cs" />

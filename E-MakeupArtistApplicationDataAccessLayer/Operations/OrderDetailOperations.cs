@@ -8,26 +8,49 @@ using System.Threading.Tasks;
 
 namespace E_MakeupArtistApplicationDataAccessLayer.Operations
 {
-    internal class OrderDetailOperations : Operations, IBasicOperations<OrderDetail, int, bool>
+    internal class OrderDetailOperations : Operations, IBasicOperations<OrderDetail, int, bool>,IDetailsByOrder<OrderDetail>
     {
         public OrderDetail Add(OrderDetail cls)
         {
-            throw new NotImplementedException();
+            var ordDetails=db.OrderDetails.Add(cls);
+
+            if (db.SaveChanges() > 0)
+            {
+                return ordDetails;
+            }
+
+            return null;
         }
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            var orderDetails = get(id);
+
+            db.OrderDetails.Remove(orderDetails);
+
+            if (db.SaveChanges() > 0)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public OrderDetail get(int id)
         {
-            throw new NotImplementedException();
+            return db.OrderDetails.Find(id);
         }
 
         public List<OrderDetail> getALL()
         {
-            throw new NotImplementedException();
+            return db.OrderDetails.ToList();
+        }
+
+        public List<OrderDetail> GetDetailsByOrder(int id)
+        {
+            var orderDetails=(from ord in db.OrderDetails where ord.OrderId== id select ord).ToList();
+
+            return orderDetails;
         }
 
         public OrderDetail Update(OrderDetail cls)

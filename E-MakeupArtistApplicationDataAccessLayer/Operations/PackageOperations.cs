@@ -12,11 +12,11 @@ namespace E_MakeupArtistApplicationDataAccessLayer.Operations
     {
         public Package Add(Package cls)
         {
-            db.Packages.Add(cls);
+            var pkg=db.Packages.Add(cls);
 
             if (db.SaveChanges() > 0)
             {
-                return cls;
+                return pkg;
             }
 
             return null;

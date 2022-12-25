@@ -12,27 +12,51 @@ namespace E_MakeupArtistApplicationDataAccessLayer.Operations
     {
         public Payment Add(Payment cls)
         {
-            throw new NotImplementedException();
+            var payment=db.Payments.Add(cls);
+
+            if (db.SaveChanges() > 0)
+            {
+                return payment;
+            }
+
+            return null;
         }
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            var payment = get(id);
+            db.Payments.Remove(payment);
+            if (db.SaveChanges() > 0)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public Payment get(int id)
         {
-            throw new NotImplementedException();
+            return db.Payments.Find(id);
         }
 
         public List<Payment> getALL()
         {
-            throw new NotImplementedException();
+            return db.Payments.ToList();
         }
 
         public Payment Update(Payment cls)
         {
-            throw new NotImplementedException();
+            var payment = get(cls.Id);
+
+            if(payment != null)
+            {
+                payment.Amount = cls.Amount;
+                db.SaveChanges();
+
+                return payment;
+            }
+
+            return null;
         }
     }
 }

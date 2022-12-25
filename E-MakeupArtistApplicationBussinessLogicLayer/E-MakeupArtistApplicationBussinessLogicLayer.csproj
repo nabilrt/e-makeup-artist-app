@@ -66,6 +66,7 @@
     <Compile Include="DTOs\UserDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AdminService.cs" />
+    <Compile Include="Services\AreaServices.cs" />
     <Compile Include="Services\ArtistServices.cs" />
     <Compile Include="Services\AuthServices.cs" />
     <Compile Include="Services\ConversationServices.cs" />

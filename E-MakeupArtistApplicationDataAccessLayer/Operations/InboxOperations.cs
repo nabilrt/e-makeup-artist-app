@@ -12,11 +12,11 @@ namespace E_MakeupArtistApplicationDataAccessLayer.Operations
     {
         public Inbox Add(Inbox cls)
         {
-            db.Inboxes.Add(cls);
+            var inb=db.Inboxes.Add(cls);
 
             if (db.SaveChanges() > 0)
             {
-                return cls;
+                return inb;
             }
 
             return null;
