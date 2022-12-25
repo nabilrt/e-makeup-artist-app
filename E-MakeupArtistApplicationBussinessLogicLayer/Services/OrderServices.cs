@@ -72,6 +72,26 @@ namespace E_MakeupArtistApplicationBussinessLogicLayer.Services
             return order;
         }
 
+        public static OrderDTO AddOrder(OrderDTO orderDTO)
+        {
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<OrderDTO, Order>();
+                cfg.CreateMap<Order, OrderDTO>();
+            });
+
+            var mapper = new Mapper(config);
+            var dbobj = mapper.Map<Order>(orderDTO);
+            var addO = DataAccessFactory.OrderDataAccess().Add(dbobj);
+
+            if ( addO!= null)
+            {
+                return mapper.Map<OrderDTO>(addO);
+            }
+
+            return null;
+        }
+
         public static OrderDTO UpdateOrder(OrderDTO order)
         {
             var config = new MapperConfiguration(cfg =>

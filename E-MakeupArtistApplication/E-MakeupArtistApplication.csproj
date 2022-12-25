@@ -102,12 +102,15 @@
     <Compile Include="Auth\ArtistAuth.cs" />
     <Compile Include="Auth\CustomerAuth.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AreaController.cs" />
     <Compile Include="Controllers\ArtistController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\ConversationController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Controllers\InboxController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\OrderDetailController.cs" />
     <Compile Include="Controllers\PackageController.cs" />
     <Compile Include="Controllers\PaymentInfoController.cs" />
     <Compile Include="Global.asax.cs">
