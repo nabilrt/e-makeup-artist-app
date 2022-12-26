@@ -71,5 +71,24 @@ namespace E_MakeupArtistApplicationBussinessLogicLayer.Services
 
 
         }
+
+        public static string ExpireTokenByUser(TokenDTO tokens)
+        {
+            var tk = DataAccessFactory.TokenDataAccess().get(tokens.TokenDetails);
+
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<TokenDTO, Token>();
+            });
+
+            var mapper = new Mapper(config);
+            var dbToken=mapper.Map<Token>(tokens);
+            if (DataAccessFactory.GetTokenExpire().ExpireTokenByUser(dbToken))
+            {
+                return "Expired";
+            }
+
+            return "Failed";
+        }
     }
 }

@@ -116,6 +116,20 @@ namespace E_MakeupArtistApplicationDataAccessLayer
             return new OrderDetailOperations();
         }
 
+        public static ITokenExpire<Token> GetTokenExpire()
+        {
+            return new TokenOperations();
+        }
+
+        public static IUnapprovedArtists<User> GetUnapprovedArtists()
+        {
+            return new UserOperations();
+        }
+
+        public static IApproveUser<User> GetApproveUser()
+        {
+            return new UserOperations();
+        }
       
     }
 }

@@ -23,6 +23,35 @@ namespace E_MakeupArtistApplication.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
 
+        [Route("api/admin/get/{id}")]
+        [HttpGet]
+        [AdminAuth]
+        public HttpResponseMessage GetAdminDetail(int id)
+        {
+            var data = UserAdminService.Get(id);
+            return Request.CreateResponse(HttpStatusCode.OK, data);
+        }
+
+        [Route("api/artists/unapproved")]
+        [HttpPost]
+        [AdminAuth]
+        public HttpResponseMessage UnApprovedArtists()
+        {
+            var data = UserServices.GetUnapproved();
+
+            return Request.CreateResponse(HttpStatusCode.OK, data);
+        }
+
+        [Route("api/artist/approve/{id}")]
+        [HttpGet]
+        [AdminAuth]
+        public HttpResponseMessage ApproveArtist(int id)
+        {
+            var data=UserServices.approveUser(id);
+
+            return Request.CreateResponse(HttpStatusCode.OK, data);
+        }
+
         [Route("api/admin/update")]
         [HttpPost]
         [AdminAuth]

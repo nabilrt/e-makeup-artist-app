@@ -24,8 +24,8 @@ namespace E_MakeupArtistApplicationDataAccessLayer.Operations
 
         public bool Delete(int id)
         {
-            var package=get(id);
-            db.Packages.Remove(package);
+            var package=(from pkg in db.Packages where pkg.Id==id select pkg).SingleOrDefault();
+            db.Packages.Remove(db.Packages.Find(id));
             if (db.SaveChanges() > 0)
             {
                 return true;

@@ -76,8 +76,8 @@ namespace E_MakeupArtistApplicationDataAccessLayer.Operations
 
             if (conversation != null)
             {
-                conversation.InboxId = cls.InboxId;
-                conversation.Message = cls.Message;
+                conversation.InboxId = conversation.InboxId;
+                conversation.Message = conversation.Message;
                 conversation.Reply = cls.Reply; 
                 db.SaveChanges();
 

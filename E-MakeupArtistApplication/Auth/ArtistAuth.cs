@@ -29,10 +29,7 @@ namespace E_MakeupArtistApplication.Auth
                 else
                 {
                     var user = UserServices.get(dbtoken.UserId);
-                    if(user.User_Type=="Artist" && user.Is_Approved == 0)
-                    {
-                        actionContext.Response = actionContext.Request.CreateResponse(System.Net.HttpStatusCode.Unauthorized, "You are not approved yet!");
-                    }
+   
                     if (user == null || user.User_Type != "Artist")
                     {
                         actionContext.Response = actionContext.Request.CreateResponse(System.Net.HttpStatusCode.Unauthorized, "You cannot access this");

@@ -17,7 +17,7 @@ namespace E_MakeupArtistApplicationBussinessLogicLayer.Services
             var data = DataAccessFactory.PackageDataAccess().getALL();
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<Package, FeedbackDTO>();
+                cfg.CreateMap<Package, PackageDTO>();
             });
             var mapper = new Mapper(config);
             var packages = mapper.Map<List<PackageDTO>>(data);

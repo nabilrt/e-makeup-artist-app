@@ -67,6 +67,7 @@
     <Compile Include="DB\Models\PaymentInfo.cs" />
     <Compile Include="DB\Models\Token.cs" />
     <Compile Include="DB\Models\User.cs" />
+    <Compile Include="Interfaces\IApproveUser.cs" />
     <Compile Include="Interfaces\IAuth.cs" />
     <Compile Include="Interfaces\IBasicOperations.cs" />
     <Compile Include="Interfaces\IConversations.cs" />
@@ -75,6 +76,8 @@
     <Compile Include="Interfaces\IPackageByArtist.cs" />
     <Compile Include="Interfaces\IPersonalMessages.cs" />
     <Compile Include="Interfaces\IPremiumMember.cs" />
+    <Compile Include="Interfaces\ITokenExpire.cs" />
+    <Compile Include="Interfaces\IUnapprovedArtists.cs" />
     <Compile Include="Migrations\202212111650353_newadded.cs" />
     <Compile Include="Migrations\202212111650353_newadded.designer.cs">
       <DependentUpon>202212111650353_newadded.cs</DependentUpon>

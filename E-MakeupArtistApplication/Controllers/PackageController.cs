@@ -26,7 +26,7 @@ namespace E_MakeupArtistApplication.Controllers
 
         [Route("api/artists/packages")]
         [HttpPost]
-        [ArtistAuth]
+       
         public HttpResponseMessage GetArtistPackages(ArtistDTO artistDTO)
         {
             var data = PackageServices.GetPackagesByArtist(artistDTO.Id);

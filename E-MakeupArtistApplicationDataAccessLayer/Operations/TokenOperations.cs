@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace E_MakeupArtistApplicationDataAccessLayer.Operations
 {
-    internal class TokenOperations : Operations, IBasicOperations<Token, string, bool>
+    internal class TokenOperations : Operations, IBasicOperations<Token, string, bool>,ITokenExpire<Token>
     {
         public Token Add(Token cls)
         {
@@ -29,6 +29,19 @@ namespace E_MakeupArtistApplicationDataAccessLayer.Operations
 
 
             db.Tokens.Remove(token);
+
+            if (db.SaveChanges() > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool ExpireTokenByUser(Token tok)
+        {
+            var token=(from t in db.Tokens where t.TokenDetails==tok.TokenDetails && t.UserId==tok.UserId select t).FirstOrDefault();
+            token.Expired_At= DateTime.Now;
 
             if (db.SaveChanges() > 0)
             {

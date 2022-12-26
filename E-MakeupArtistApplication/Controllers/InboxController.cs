@@ -19,9 +19,17 @@ namespace E_MakeupArtistApplication.Controllers
         [ArtistAuth]
         public HttpResponseMessage getArtistInbox(ArtistDTO artist)
         {
-            var data=InboxServices.getArtistMessages(artist);
+            try
+            {
+                var data = InboxServices.getArtistMessages(artist);
 
-            return Request.CreateResponse(HttpStatusCode.OK, data);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch(Exception ex) 
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        
 
         }
 
@@ -30,9 +38,18 @@ namespace E_MakeupArtistApplication.Controllers
         [CustomerAuth]
         public HttpResponseMessage getCustomerInbox(CustomerDTO customer)
         {
-            var data=InboxServices.getCustomerMessages(customer);
+            try
+            {
+                var data = InboxServices.getCustomerMessages(customer);
 
-            return Request.CreateResponse(HttpStatusCode.OK,data);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+
+            }
+            catch(Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        
         }
 
         [Route("api/inbox/add")]
@@ -41,9 +58,18 @@ namespace E_MakeupArtistApplication.Controllers
 
         public HttpResponseMessage addInbox(InboxDTO inbox)
         {
-            var data = InboxServices.addInbox(inbox);
+            try
+            {
+                var data = InboxServices.addInbox(inbox);
 
-            return Request.CreateResponse(HttpStatusCode.OK, data);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+
+            }
+            catch(Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+           
         }
 
         [Route("api/inbox/delete/{id}")]
@@ -52,9 +78,17 @@ namespace E_MakeupArtistApplication.Controllers
 
         public HttpResponseMessage deleteMessage(int id)
         {
-            var data=InboxServices.deleteInbox(id);
+            try
+            {
+                var data = InboxServices.deleteInbox(id);
 
-            return Request.CreateResponse(HttpStatusCode.OK, data);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+
+            }catch(Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+           
         }
 
         

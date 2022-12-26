@@ -6,9 +6,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace E_MakeupArtistApplication.Controllers
 {
+    [EnableCors("*", "*", "*")]
     public class AuthController : ApiController
     {
         [Route("api/login")]
@@ -22,10 +24,21 @@ namespace E_MakeupArtistApplication.Controllers
             if (ModelState.IsValid)
             {
                 var token = AuthServices.Authenticate(login.Username, login.Password);
+                var user = UserServices.get(token.UserId);
                 if (token != null)
                 {
-                    return Request.CreateResponse(HttpStatusCode.OK, token);
+                    if (user.Is_Approved == 1)
+                    {
+                        return Request.CreateResponse(HttpStatusCode.OK, token);
+
+                    }
+                    else if(user.Is_Approved== 0) {
+
+                        return Request.CreateResponse(HttpStatusCode.OK, "Unapproved");
+                    }
+                    
                 }
+
                 return Request.CreateResponse(HttpStatusCode.NotFound, "Username password invalid");
             }
             return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);

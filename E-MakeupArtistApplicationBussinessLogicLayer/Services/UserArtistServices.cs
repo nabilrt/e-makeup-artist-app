@@ -39,6 +39,36 @@ namespace E_MakeupArtistApplicationBussinessLogicLayer.Services
             return userArtists;
         }
 
+        public static List<UserArtistDTO> getUnapproved()
+        {
+            var Users = DataAccessFactory.GetUnapprovedArtists().GetUnapprovedArtists();
+            var Artists = DataAccessFactory.ArtistDataAccess().getALL();
+            var userArtists = new List<UserArtistDTO>();
+
+            foreach (var user in Artists)
+            {
+                var us = (from u in Users where u.Id == user.Id select u).SingleOrDefault();
+
+                userArtists.Add(new UserArtistDTO()
+                {
+                    Id = us.Id,
+                    Username = us.Username,
+                    Password = us.Password,
+                    Email = us.Email,
+                    User_Type = us.User_Type,
+                    Is_Approved = us.Is_Approved,
+                    Name = user.Name,
+                    DOB = user.DOB,
+                    AreaId = user.AreaId,
+                    Portfolio_Link = user.Portfolio_Link
+                });
+            }
+
+            return userArtists;
+        }
+
+
+
         public static UserArtistDTO Get(int id)
         {
             var User = DataAccessFactory.UserDataAccess().get(id);

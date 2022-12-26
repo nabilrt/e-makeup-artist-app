@@ -17,11 +17,20 @@ namespace E_MakeupArtistApplication.Controllers
     {
         [Route("api/customers")]
         [HttpGet]
-        [AdminAuth]
+       // [AdminAuth]
 
         public HttpResponseMessage getAllCustomers()
         {
             var data = UserCustomerServices.getALL();
+
+            return Request.CreateResponse(HttpStatusCode.OK, data);
+        }
+
+        [Route("api/customer/get/{id}")]
+        [HttpGet]
+        public HttpResponseMessage getCustomerById(int id)
+        {
+            var data = UserCustomerServices.GetUserCustomer(id);
 
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }

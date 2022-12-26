@@ -16,12 +16,19 @@ namespace E_MakeupArtistApplication.Controllers
     {
         [Route("api/artists")]
         [HttpGet]
-        [AdminAuth]
+       
         public HttpResponseMessage getAllArtists()
         {
-            var data = UserArtistServices.getALL();
+            try
+            {
+                var data = UserArtistServices.getALL();
 
-            return Request.CreateResponse(HttpStatusCode.OK, data);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
         }
 
         [Route("api/artist/add")]
@@ -29,36 +36,70 @@ namespace E_MakeupArtistApplication.Controllers
 
         public HttpResponseMessage addUser(UserArtistDTO userArtistDTO)
         {
-            var data = UserArtistServices.Add(userArtistDTO);
+            try
+            {
+                var data = UserArtistServices.Add(userArtistDTO);
 
-            return Request.CreateResponse(HttpStatusCode.OK, data);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+           
         }
 
-        [Route("api/artist/{id}")]
+        [Route("api/artist/get/{id}")]
         [HttpGet]
+     
 
         public HttpResponseMessage getUser(int id)
         {
-            var data = UserArtistServices.Get(id);
-            return Request.CreateResponse(HttpStatusCode.OK, data);
+            try
+            {
+                var data = UserArtistServices.Get(id);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+
+            }catch(Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+          
         }
 
         [Route("api/artist/update")]
         [HttpPost]
+        [ArtistAuth]
         public HttpResponseMessage updateUser(UserArtistDTO userArtistDTO)
         {
-            var data = UserArtistServices.Update(userArtistDTO);
+            try
+            {
+                var data = UserArtistServices.Update(userArtistDTO);
 
-            return Request.CreateResponse(HttpStatusCode.OK, data);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+
         }
 
         [Route("api/artist/delete/{id}")]
         [HttpGet]
         public HttpResponseMessage deleteUser(int id)
         {
-            var data = UserArtistServices.delete(id);
+            try
+            {
+                var data = UserArtistServices.delete(id);
 
-            return Request.CreateResponse(HttpStatusCode.OK, data);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+
         }
 
         [Route("api/artist/message/send")]
@@ -66,9 +107,17 @@ namespace E_MakeupArtistApplication.Controllers
         [ArtistAuth]
         public HttpResponseMessage sendMessage(ConversationDTO conversationDTO)
         {
-            var data=ConversationServices.SendMessage(conversationDTO);
+            try
+            {
+                var data = ConversationServices.SendMessage(conversationDTO);
 
-            return Request.CreateResponse(HttpStatusCode.OK,data);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+
         }
 
         [Route("api/artist/conversation/{id}")]
@@ -76,9 +125,17 @@ namespace E_MakeupArtistApplication.Controllers
         [ArtistAuth]
         public HttpResponseMessage getConversation(int id)
         {
-            var data=ConversationServices.GetConversation(id);
+            try
+            {
+                var data = ConversationServices.GetConversation(id);
 
-            return Request.CreateResponse(HttpStatusCode.OK, data);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+
+            }catch(Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+         
         }
 
         [Route("api/artist/message/reply")]
@@ -86,10 +143,20 @@ namespace E_MakeupArtistApplication.Controllers
         [ArtistAuth]
         public HttpResponseMessage replyMessage(ConversationDTO conversationDTO)
         {
-            var data=ConversationServices.ReplyMessage(conversationDTO);
+            try
+            {
+                var data = ConversationServices.ReplyMessage(conversationDTO);
 
-            return Request.CreateResponse(HttpStatusCode.OK, data);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+
         }
+
+
 
     }
 }
