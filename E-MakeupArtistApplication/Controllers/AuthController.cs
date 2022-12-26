@@ -10,7 +10,7 @@ using System.Web.Http.Cors;
 
 namespace E_MakeupArtistApplication.Controllers
 {
-    [EnableCors("*", "*", "*")]
+    [EnableCors("*", "*", "*")]  //Authentication
     public class AuthController : ApiController
     {
         [Route("api/login")]
